@@ -86,8 +86,8 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Change overlay color here */
-  z-index: 1; /* Place overlay above the button's content */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
   border-radius: 10px 10px 0 0;
 }
 
@@ -98,8 +98,8 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Change overlay color here */
-  z-index: 1; /* Place overlay above the button's content */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
 }
 
 .navIcons{
@@ -157,8 +157,8 @@ main {
 }
 
 .rsvpForm{
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  align-self: center;
 }
 
 .highlightText {
@@ -171,12 +171,13 @@ main {
 .highlightTextCountdown {
   font-family: 'Montserrat', sans-serif;
   color: #36A6CE;
-  margin: 0;
+  margin:0px;
 }
 
 
 .contentText{
   color: black;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 
@@ -185,6 +186,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .countDownContainer {
@@ -217,5 +219,6 @@ main {
 
 .dateText {
   font-family: 'Roboto', serif;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
