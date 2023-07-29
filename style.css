@@ -30,7 +30,9 @@ main {
   background-color: #CECECE;
   height: 15%;
   position: relative;
-  margin-bottom: 90px;
+  margin: 0 auto 90px auto;
+  width: 95%;
+  
 }
 
 .circleImage {
@@ -154,11 +156,24 @@ main {
   margin: 10px;
 }
 
+.rsvpForm{
+  width: 95%;
+  margin: 0 auto;
+}
+
 .highlightText {
   font-family: 'Montserrat', sans-serif;
   color: #36A6CE;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.highlightTextCountdown {
+  font-family: 'Montserrat', sans-serif;
+  color: #36A6CE;
+  margin: 0;
+}
+
 
 .contentText{
   color: black;
@@ -201,5 +216,5 @@ main {
 
 .dateText {
   font-family: 'Roboto', serif;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
