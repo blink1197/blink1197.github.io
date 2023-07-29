@@ -7,7 +7,7 @@ html {
 }
   
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -23,7 +23,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   max-width: 500px;
-  border: 1px solid white;
   margin: 0 auto;
 }
 
@@ -101,9 +100,6 @@ main {
   z-index: 1; /* Place overlay above the button's content */
 }
 
-
-
-
 .navIcons{
   width: 40px;
   margin: 0 auto 0 auto;
@@ -154,4 +150,56 @@ main {
   border-radius: 10px 0 10px 10px;
 }
 
+.content{
+  margin: 10px;
+}
 
+.highlightText {
+  font-family: 'Montserrat', sans-serif;
+  color: #36A6CE;
+  margin-bottom: 10px;
+}
+
+.contentText{
+  color: black;
+  margin-bottom: 10px;
+}
+
+.countDown{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countDownContainer {
+  display: flex;
+  font-size: 2em;
+  font-family: 'Roboto Slab', serif;
+  margin: 0
+}
+
+.countDownTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.countDownText {
+  margin: 5px;
+  width: 10px;
+}
+
+.countDownNumber {
+  margin: 5px;
+  width: 55px;
+  margin-bottom: 0px;
+}
+.countDownLabel {
+  font-size: 0.4em;
+  margin: 0px;
+}
+
+.dateText {
+  font-family: 'Roboto', serif;
+  margin-bottom: 20px;
+}
