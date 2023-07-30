@@ -47,9 +47,9 @@
             </button>
           </div>
           <div class="navItem">
-            <button class="navButton messageButton">
+            <button class="navButton moreButton">
               <div class="overlay"></div>
-              <img class="navIcons" src="./images/message.png">
+              <img class="navIcons" src="./images/more.png">
             </button>
           </div>
         </nav>
@@ -58,46 +58,59 @@
           <div class="overlayContent"></div>
         </div>
         <div class="contentContainer">
-          <div class="content">
-            <h2 class="highlightText">
-              Hi John Carlo,
-            </h2>
-            <p class="contentText">
-              We are getting married and we’d love for you to join us in our special day.
-            </p>
+          <div class="rsvpContent">
+            <div class="content">
+              <h2 class="highlightText" id="inviteeName">
+                Hi
+              </h2>
+              <p class="contentText">
+                We are getting married and we’d love for you to join us in our special day.
+              </p>
+            </div>
+            <iframe class="rsvpForm" src="https://docs.google.com/forms/d/e/1FAIpQLSdAEtiWcr4yQ6pIQuF7bM5C5zpPBhYKHlwjJdmTKKH1zjM-cA/viewform?embedded=true" height="290" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <div class="countDown">
+              <h2 class="highlightTextCountdown">
+                Countdown to forever
+              </h2>
+              <div class="countDownContainer">
+                <div class="countDownTime">
+                  <h1 class="countDownNumber" id="days"></h1>
+                  <h3 class="countDownLabel">Days</h3>
+                </div>
+                  <h1 class="countDownText" >:</h1>
+                <div class="countDownTime">
+                  <h1 class="countDownNumber" id="hours"></h1>
+                  <h3 class="countDownLabel">Hours</h3>
+                </div>
+                  <h1 class="countDownText" >:</h1>
+                <div class="countDownTime">
+                  <h1 class="countDownNumber" id="minutes"></h1>
+                  <h3 class="countDownLabel">Minutes</h3>
+                </div>
+                  <h1 class="countDownText" >:</h1>
+                <div class="countDownTime">
+                  <h1 class="countDownNumber" id="seconds"></h1>
+                  <h3 class="countDownLabel">Seconds</h3>
+                </div>
+              </div>
+              <h2 class="dateText">
+                October 3, 2023
+              </h2>
+            </div>
           </div>
 
-          <iframe class="rsvpForm" src="https://docs.google.com/forms/d/e/1FAIpQLSdAEtiWcr4yQ6pIQuF7bM5C5zpPBhYKHlwjJdmTKKH1zjM-cA/viewform?embedded=true" height="290" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-          
-          <div class="countDown">
-            <h2 class="highlightTextCountdown">
-              Countdown to forever
-            </h2>
-            <div class="countDownContainer">
-              <div class="countDownTime">
-                <h1 class="countDownNumber" id="days"></h1>
-                <h3 class="countDownLabel">Days</h3>
-              </div>
-                <h1 class="countDownText" >:</h1>
-              <div class="countDownTime">
-                <h1 class="countDownNumber" id="hours"></h1>
-                <h3 class="countDownLabel">Hours</h3>
-              </div>
-                <h1 class="countDownText" >:</h1>
-              <div class="countDownTime">
-                <h1 class="countDownNumber" id="minutes"></h1>
-                <h3 class="countDownLabel">Minutes</h3>
-              </div>
-                <h1 class="countDownText" >:</h1>
-              <div class="countDownTime">
-                <h1 class="countDownNumber" id="seconds"></h1>
-                <h3 class="countDownLabel">Seconds</h3>
-              </div>
-            </div>
-            <h2 class="dateText">
-              October 3, 2023
-            </h2>
+          <div class="snapshotsContent">
+            Snapshots
           </div>
+
+          <div class="locationContent">
+            Location
+          </div>
+
+          <div class="faqContent">
+            FAQ
+          </div>
+          
         </div>
       </section>
     </main>
