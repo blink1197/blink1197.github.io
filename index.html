@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <!-- jQuery from Google CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -22,34 +23,69 @@
       </section>
       <section class="tabsContainer">
         <nav class="navContainer">
-          <div class="navItem">
-            <button class="navButton rsvpButton">
+          <div class="navItem weddingNav">
+            <button class="navButton weddingButton">
               <div class="overlay selected"></div>
+              <img class="navIcons" src="./images/wedding.png">
+            </button>
+          </div>
+          <div class="navItem rsvpNav">
+            <button class="navButton rsvpButton">
+              <div class="overlay"></div>
               <img class="navIcons" src="./images/rsvp.png">
             </button>
           </div>
-          <div class="navItem">
+          <div class="navItem snapshotsNav">
             <button class="navButton snapshotsButton">
               <div class="overlay"></div>
               <img class="navIcons" src="./images/camera.png">
             </button>
           </div>
-          <div class="navItem">
+          <div class="navItem locationNav">
             <button class="navButton locationButton">
               <div class="overlay"></div>
               <img class="navIcons" src="./images/location.png">
             </button>
           </div>
-          <div class="navItem">
+          <div class="navItem moreNav">
+            <button class="navButton moreButton">
+              <div class="overlay"></div>
+              <img class="navIcons" src="./images/more.png">
+            </button>
+          </div>
+
+          <div class="navItem backNav" style="display: none;">
+            <button class="navButton backButton">
+              <div class="overlay"></div>
+              <img class="navIcons" src="./images/left.png">
+            </button>
+          </div>
+
+          <div class="navItem faqNav" style="display: none;">
             <button class="navButton faqButton">
               <div class="overlay"></div>
               <img class="navIcons" src="./images/faq.png">
             </button>
           </div>
-          <div class="navItem">
-            <button class="navButton moreButton">
+
+          <div class="navItem programNav" style="display: none;">
+            <button class="navButton programButton">
               <div class="overlay"></div>
-              <img class="navIcons" src="./images/more.png">
+              <img class="navIcons" src="./images/program.png">
+            </button>
+          </div>
+
+          <div class="navItem countdownNav" style="display: none;">
+            <button class="navButton countdownButton">
+              <div class="overlay"></div>
+              <img class="navIcons" src="./images/countdown.png">
+            </button>
+          </div>
+
+          <div class="navItem messageNav" style="display: none;">
+            <button class="navButton messageButton">
+              <div class="overlay"></div>
+              <img class="navIcons" src="./images/envelope.png">
             </button>
           </div>
         </nav>
@@ -57,17 +93,115 @@
           <div class="behindContent"></div>
           <div class="overlayContent"></div>
         </div>
-        <div class="contentContainer">
-          <div class="rsvpContent">
-            <div class="content">
+        <div class="mainContentContainer">
+          <div class="contentContainer" id="weddingContent">
+            We are getting married!
+          </div>
+
+          <div class="contentContainer" id="rsvpContent">
+            <div class="content" >
               <h2 class="highlightText" id="inviteeName">
-                Hi
+                Hi,
               </h2>
               <p class="contentText">
                 We are getting married and we’d love for you to join us in our special day.
               </p>
             </div>
             <iframe class="rsvpForm" src="https://docs.google.com/forms/d/e/1FAIpQLSdAEtiWcr4yQ6pIQuF7bM5C5zpPBhYKHlwjJdmTKKH1zjM-cA/viewform?embedded=true" height="290" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            
+          </div>
+
+          <div class="contentContainer" id="snapshotsContent">
+            Snapshots
+          </div>
+
+          <div class="contentContainer" id="locationContent">
+            Location
+            <img class="locationLogo" src="./images/terrasse_logo.jpg" alt="terrasse logo">
+            <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.267163925278!2d121.04870004031432!3d14.640770076149238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ffc121e049%3A0x58b7ed879aa7efc9!2sTerrasse%20MNL!5e0!3m2!1sen!2sph!4v1691746145064!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            Terrasse MNL, Matiyaga, Diliman, Quezon City, Metro Manila
+          </div>
+
+          <div class="contentContainer" id="faqContent">
+            <h2>FAQ</h2>
+            <div class="faqCardsContainer">
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Sample Question 1?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 1
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Sample Question 1?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 1
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Sample Question 2?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 2
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Sample Question 3?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 3
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Sample Question 4?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 4
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contentContainer" id="programContent">
+            Program
+          </div>
+
+          <div class="contentContainer" id="countdownContent">
             <div class="countDown">
               <h2 class="highlightTextCountdown">
                 Countdown to forever
@@ -99,18 +233,9 @@
             </div>
           </div>
 
-          <div class="snapshotsContent">
-            Snapshots
+          <div class="contentContainer" id="messageContent">
+            Message
           </div>
-
-          <div class="locationContent">
-            Location
-          </div>
-
-          <div class="faqContent">
-            FAQ
-          </div>
-          
         </div>
       </section>
     </main>

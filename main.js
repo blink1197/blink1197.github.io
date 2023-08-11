@@ -3,6 +3,9 @@ $(document).ready(function() {
   const dkeyValue = getParameterValue("dkey");
   updateText(keyValue, dkeyValue);
 
+  $(".contentContainer").hide();
+  $("#weddingContent").show();
+
   //initial page load
   $('.snapshotsContent').hide();
   $('.locationContent').hide();
@@ -12,42 +15,95 @@ $(document).ready(function() {
   // Function to handle the click event on the buttons
   $(".navButton").click(function () {
     // Remove the selected class from all navItems
-      $(".navItem .overlay").removeClass("selected");
+    $(".navItem .overlay").removeClass("selected");
 
     // Add the selected class only to the clicked navItem
-      $(this).find(".overlay").addClass("selected");
-
-      const buttonClassName = $(this).attr("class").split(" ")[1];
-      if (buttonClassName == "rsvpButton") {
-        $('.contentContainer').css('border-radius', '0 10px 10px 10px');
-        $('.rsvpContent').show();
-        $('.snapshotsContent').hide();
-        $('.locationContent').hide();
-        $('.faqContent').hide();
-      }
-      else if (buttonClassName == "snapshotsButton"){
-        $('.contentContainer').css('border-radius', '10px');
-        $('.rsvpContent').hide();
-        $('.snapshotsContent').show();
-        $('.locationContent').hide();
-        $('.faqContent').hide();
-      }
-      else if (buttonClassName == "locationButton"){
-        $('.contentContainer').css('border-radius', '10px');
-        $('.rsvpContent').hide();
-        $('.snapshotsContent').hide();
-        $('.locationContent').show();
-        $('.faqContent').hide();
-      }
-      else if (buttonClassName == "faqButton"){
-        $('.contentContainer').css('border-radius', '10px');
-        $('.rsvpContent').hide();
-        $('.snapshotsContent').hide();
-        $('.locationContent').hide();
-        $('.faqContent').show();
-      } else $('.contentContainer').css('border-radius', '10px');
-       
+    $(this).find(".overlay").addClass("selected");
   });
+
+
+
+  $(".weddingButton").click(function() {
+    $(".contentContainer").hide();
+    $("#weddingContent").show();
+  });
+
+  $(".rsvpButton").click(function() {
+    $(".contentContainer").hide();
+    $("#rsvpContent").show();
+  });
+
+  $(".snapshotsButton").click(function() {
+    $(".contentContainer").hide();
+    $("#snapshotsContent").show();
+  });
+
+  $(".locationButton").click(function() {
+    $(".contentContainer").hide();
+    $("#locationContent").show();
+  });
+
+  $(".faqButton").click(function() {
+    $(".contentContainer").hide();
+    $("#faqContent").show();
+  });
+
+  $(".programButton").click(function() {
+    $(".contentContainer").hide();
+    $("#programContent").show();
+  });
+
+  $(".countdownButton").click(function() {
+    $(".contentContainer").hide();
+    $("#countdownContent").show();
+  });
+
+  $(".messageButton").click(function() {
+    $(".contentContainer").hide();
+    $("#messageContent").show();
+  });
+
+  // Add similar click handlers for other buttons
+
+  $(".moreButton").click(function() {
+    $(".weddingNav, .rsvpNav, .snapshotsNav, .locationNav, .moreNav").hide();
+    $(".faqNav, .backNav, .programNav, .countdownNav, .messageNav").show();
+    $(".navItem.faqNav .overlay").addClass("selected");
+    $(".contentContainer").hide();
+    $("#faqContent").show();
+  });
+
+  // Show the initial buttons and hide the extra buttons when the "Back" button is clicked
+  $(".backButton").click(function() {
+    $(".weddingNav, .rsvpNav, .snapshotsNav, .locationNav, .moreNav").show();
+    $(".faqNav, .backNav, .programNav, .countdownNav, .messageNav").hide();
+    $(".navItem.locationNav .overlay").addClass("selected");
+    $(".contentContainer").hide();
+    $("#locationContent").show();
+  });
+
+
+  $('.faqCollapseButton').click(function() {
+    const container = $(this).closest('.faqCards');
+    const textContainer = container.find('.faqTextContainer');
+    const titleContainer = container.find('.faqTitleContainer');
+    const collapseIcon = container.find('.collapseIcon');
+    textContainer.slideToggle();
+    
+    titleContainer.toggleClass('faqTitleContainerNoRadiusBottom');
+
+    collapseIcon.attr('src', function(index, attr) {
+      return attr.endsWith('plus.png') ? './images/minus.png' : './images/plus.png';
+    });
+    
+  });
+
+
+
+
+
+
+  //// FUNCTIONS ////
 
   function updateCountdown() {
     // Set the target date (October 3, 2023 1:00 PM GMT+8)
@@ -109,7 +165,7 @@ $(document).ready(function() {
       const decryptedValue = await decrypt(keyValue, key);
       $(".highlightText").text("Hi " + decryptedValue + ",");
     } catch (error) {
-      $(".highlightText").text("Hi");
+      $(".highlightText").text("Hi,");
       console.error("Error during decryption:", error);
     }
   }
