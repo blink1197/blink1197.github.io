@@ -60,6 +60,7 @@ $(document).ready(function() {
 
   $(".messageButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '0 0 10px 10px');
     $("#messageContent").show();
   });
 
