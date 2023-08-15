@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <!-- jQuery from Google CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -95,12 +98,14 @@
         </div>
         <div class="mainContentContainer">
           <div class="contentContainer" id="weddingContent">
-            We are getting married!
+            <h2 class="contentTitle">
+              We are getting married!
+            </h2>
           </div>
 
           <div class="contentContainer" id="rsvpContent">
             <div class="content" >
-              <h2 class="highlightText" id="inviteeName">
+              <h2 class="contentTitle" id="inviteeName">
                 Hi,
               </h2>
               <p class="contentText">
@@ -112,23 +117,31 @@
           </div>
 
           <div class="contentContainer" id="snapshotsContent">
-            Snapshots
+            <h2 class="contentTitle">
+              Snapshots
+            </h2>
           </div>
 
           <div class="contentContainer" id="locationContent">
-            Location
+            <h2 class="contentTitle">
+              Venue
+            </h2>
             <img class="locationLogo" src="./images/terrasse_logo.jpg" alt="terrasse logo">
             <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.267163925278!2d121.04870004031432!3d14.640770076149238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ffc121e049%3A0x58b7ed879aa7efc9!2sTerrasse%20MNL!5e0!3m2!1sen!2sph!4v1691746145064!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            Terrasse MNL, Matiyaga, Diliman, Quezon City, Metro Manila
+            Terrasse MNL, Matiyaga st., Diliman, Quezon City, Metro Manila
           </div>
 
           <div class="contentContainer" id="faqContent">
-            <h2>FAQ</h2>
+            <h2 class="contentTitle">
+              Frequently Asked Questions
+            </h2>
+
             <div class="faqCardsContainer">
+              
               <div class="faqCards">
                 <div class="faqTitleContainer">
                   <h3 class="faqCardTitle">
-                    Sample Question 1?
+                    What time should I arrive to the ceremony?
                   </h3>
                   <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
                 </div>
@@ -142,21 +155,7 @@
               <div class="faqCards">
                 <div class="faqTitleContainer">
                   <h3 class="faqCardTitle">
-                    Sample Question 1?
-                  </h3>
-                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
-                </div>
-                <div class="faqTextContainer">
-                  <p class="faqHeading">
-                    Sample Answer to Question 1
-                  </p>
-                </div>
-              </div>
-
-              <div class="faqCards">
-                <div class="faqTitleContainer">
-                  <h3 class="faqCardTitle">
-                    Sample Question 2?
+                    What is the dress code?
                   </h3>
                   <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
                 </div>
@@ -170,7 +169,7 @@
               <div class="faqCards">
                 <div class="faqTitleContainer">
                   <h3 class="faqCardTitle">
-                    Sample Question 3?
+                    Is there parking available at the wedding venue?
                   </h3>
                   <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
                 </div>
@@ -184,7 +183,63 @@
               <div class="faqCards">
                 <div class="faqTitleContainer">
                   <h3 class="faqCardTitle">
-                    Sample Question 4?
+                    Can I take pictures during the ceremony to post on social media?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 4
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Do you have a gift preference?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 4
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    What kind of food will be served?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 4
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    Will there be a sitting arrangement?
+                  </h3>
+                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
+                </div>
+                <div class="faqTextContainer">
+                  <p class="faqHeading">
+                    Sample Answer to Question 4
+                  </p>
+                </div>
+              </div>
+
+              <div class="faqCards">
+                <div class="faqTitleContainer">
+                  <h3 class="faqCardTitle">
+                    I still have questions. What is the best way to contact you?
                   </h3>
                   <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
                 </div>
@@ -198,13 +253,15 @@
           </div>
 
           <div class="contentContainer" id="programContent">
-            Program
+            <div class="image-container">
+              <img class="programImage" src="./images/program_image.png" alt="program">
+            </div>
           </div>
 
           <div class="contentContainer" id="countdownContent">
             <div class="countDown">
               <h2 class="highlightTextCountdown">
-                Countdown to forever
+                Countdown to Forever
               </h2>
               <div class="countDownContainer">
                 <div class="countDownTime">
@@ -234,7 +291,9 @@
           </div>
 
           <div class="contentContainer" id="messageContent">
-            Message
+            <h2 class="contentTitle">
+              Message
+            </h2>
           </div>
         </div>
       </section>

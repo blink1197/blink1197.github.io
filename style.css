@@ -2,6 +2,21 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Moontime';
+  src: url('fonts/Moontime.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Apricots';
+  src: url('fonts/Apricots.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Britanny';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
 html {
   font-size: 16px;
 }
@@ -127,6 +142,7 @@ main {
   border-radius: 0 10px 10px 10px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .contentContainer {
@@ -134,6 +150,15 @@ main {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  align-items: center;
+}
+
+.contentTitle {
+  font-family: 'Britanny', sans-serif;
+  font-size: 2em;
+  color: #27445C;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .behindContentContainer {
@@ -179,9 +204,10 @@ main {
 }
 
 .highlightTextCountdown {
-  font-family: 'Poppins', sans-serif;
-  color: #36A6CE;
+  font-family: 'Britanny', sans-serif;
+  color: #27445C;
   margin:0px;
+  font-size: 2.73em;
 }
 
 
@@ -223,6 +249,7 @@ main {
 }
 
 .countDownNumber {
+  font-family: 'Lora', sans-serif;
   margin: 5px;
   width: 55px;
   margin-bottom: 0px;
@@ -234,7 +261,7 @@ main {
 }
 
 .dateText {
-  font-family: 'Roboto', serif;
+  font-family: 'Playfair Display', serif;
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -266,7 +293,7 @@ main {
   width: 100%;
   position: relative;
   overflow-y: auto;
-  height: 60vh;
+  height: 50vh;
 }
 
 .faqCards {
@@ -284,6 +311,8 @@ main {
 
 .faqCardTitle {
   margin-left: 10px;
+  font-family: 'Lora', sans-serif;
+  text-align: left;
 }
 
 .faqTextContainer {
@@ -292,6 +321,10 @@ main {
   border-radius: 0 0 10px 10px;
   background-color: #8cafc6;
   display: none;
+}
+
+.faqHeading {
+  font-family: 'Roboto', sans-serif;
 }
 
 .faqCollapseButton {
@@ -308,4 +341,51 @@ main {
 
 .faqTitleContainerNoRadiusBottom {
   border-radius: 10px 10px 0 0;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.programImage {
+  max-width: 100%;
+  display: block;
+}
+
+.programImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 1) 20%
+  ),
+  linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 1) 20%
+  ),
+  linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 1) 20%
+  ),
+  linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 1) 20%
+  );
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: -1;
 }
