@@ -42,25 +42,40 @@ main {
 }
 
 .topImage {
-  background-color: #8cafc6;
-  height: 15%;
+  background-image: url(./images/raw/IMG_6894-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 206px;
+  height: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  margin: 0 auto 90px auto;
+  margin: 5px auto 70px auto;
+  border-radius: 10px;
   width: 95%;
   flex-grow: 0;
   flex-shrink: 0;
-  
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.circleImage {
+.circleImageContainer {
   border-radius: 75px;
   width: 150px;
   height: 150px;
   background-color: #c2e0f4;
-  position: absolute;
-  bottom: -75px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: 90px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 3px solid #7f7f7f;
+}
+
+.circleImage {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 75px;
 }
 
 .tabsContainer {
@@ -72,6 +87,7 @@ main {
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navContainer {
@@ -153,12 +169,20 @@ main {
   align-items: center;
 }
 
+.weddingContentText, .messageContentText {
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px auto;
+  text-align: left;
+  width: 90%;
+
+}
+
 .contentTitle {
   font-family: 'Britanny', sans-serif;
   font-size: 2em;
   color: #27445C;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .behindContentContainer {
@@ -190,7 +214,7 @@ main {
   margin: 10px;
 }
 
-.rsvpForm{
+.rsvpForm, .messageForm{
   width: 100%;
   height: 70%;
   overflow-x: hidden;
@@ -215,6 +239,7 @@ main {
   color: black;
   margin-top: 5px;
   margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .rsvpContent {
@@ -267,12 +292,21 @@ main {
 }
 
 .location {
-  width: 80%;
+  width: 90%;
   height: 50%;
 }
 
 .locationLogo {
   width: 30%;
+}
+
+.venueContainer {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: 'Montserrat';
+  margin-bottom: 20px;
 }
 
 
@@ -303,7 +337,7 @@ main {
 .faqTitleContainer {
   display: flex;
   justify-content: space-between;
-  width: 80vw;
+  width: 85vw;
   background-color: #27445C;
   color: white;
   border-radius: 10px;
@@ -311,7 +345,7 @@ main {
 
 .faqCardTitle {
   margin-left: 10px;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: left;
 }
 
@@ -319,12 +353,22 @@ main {
   border: 1px solid #27445C;
   display: none;
   border-radius: 0 0 10px 10px;
-  background-color: #8cafc6;
+  background-color: #ccdce7;
   display: none;
+  width: 85vw;
 }
 
 .faqHeading {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  margin: 10px;
+}
+
+.faqText {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 90%;
+  margin-top: 0px;
 }
 
 .faqCollapseButton {
@@ -352,6 +396,7 @@ main {
 .programImage {
   max-width: 100%;
   display: block;
+  border-radius: 10px;
 }
 
 .programImage::before {
@@ -388,4 +433,57 @@ main {
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: -1;
+}
+
+.blueText {
+  color: #27445C;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.textBox {
+  width: 85%;
+  border-radius: 5px;
+  padding: 10px;
+  height: 150px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sendButton {
+  width: 75px;
+  height: 40px;
+  font-size: 1.1em;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  background-color: #27445C;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.wrapper{
+  width:100%;
+  text-align:center;
+}
+
+.carouselImage {
+  width: 100px;
+  height: auto;
+}
+
+.carousel{
+  width:90%;
+  margin:0px auto;
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 2px solid #fff;
+}
+.wrapper .slick-dots li button:before {
+  font-size:20px;
+  color:white;
 }

@@ -1,7 +1,34 @@
+let firstName = "";
+
 $(document).ready(function() {
-  const keyValue = getParameterValue("key");
-  const dkeyValue = getParameterValue("dkey");
-  updateText(keyValue, dkeyValue);
+  const name = getParameterValue("nme");
+  const key = getParameterValue("vk");
+  if(name && key) {
+    var guestName = vigenereDecrypt(name, key);
+    guestName = capitalizeWords(guestName);
+    const nameParts = guestName.split(' ');
+    nameParts.pop();
+    firstName = nameParts.join(' ');
+
+    //console.log(guestName);
+    $("#inviteeName").text("Hi " + firstName + ",");
+  }
+  else {
+    $("#highinviteeNamelightText").text("Hi,");
+  }
+
+
+  $('.carousel').slick({
+    lazyLoad: 'ondemand',
+    slidesToShow: 1,
+    dots:true,
+    centerMode: true,
+  });
+
+  
+  // var url ='example.com';
+  // var testURl = addParametersToUrl(url, guestNameEncrypted, key)
+  // console.log(testURl);
 
   $(".contentContainer").hide();
   $("#weddingContent").show();
@@ -25,36 +52,43 @@ $(document).ready(function() {
 
   $(".weddingButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '0 10px 10px 10px');
     $("#weddingContent").show();
   });
 
   $(".rsvpButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#rsvpContent").show();
   });
 
   $(".snapshotsButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#snapshotsContent").show();
   });
 
   $(".locationButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#locationContent").show();
   });
 
   $(".faqButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#faqContent").show();
   });
 
   $(".programButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#programContent").show();
   });
 
   $(".countdownButton").click(function() {
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#countdownContent").show();
   });
 
@@ -89,98 +123,25 @@ $(document).ready(function() {
     const textContainer = container.find('.faqTextContainer');
     const titleContainer = container.find('.faqTitleContainer');
     const collapseIcon = container.find('.collapseIcon');
-    textContainer.slideToggle();
+    textContainer.slideToggle(500);
     
-    titleContainer.toggleClass('faqTitleContainerNoRadiusBottom');
+    collapseIcon.attr('src', function(index, attr) {
+      if (attr.endsWith('plus.png')) {
+        titleContainer.toggleClass('faqTitleContainerNoRadiusBottom');
+      }
+      else{
+        setTimeout(function() {
+          titleContainer.toggleClass('faqTitleContainerNoRadiusBottom');
+        }, 500); // Delay of 500 milliseconds
+      }
+    });
 
     collapseIcon.attr('src', function(index, attr) {
       return attr.endsWith('plus.png') ? './images/minus.png' : './images/plus.png';
     });
+
     
   });
-
-
-
-
-
-
-  //// FUNCTIONS ////
-
-  function updateCountdown() {
-    // Set the target date (October 3, 2023 1:00 PM GMT+8)
-    const targetDate = new Date("2023-10-03T13:00:00+08:00");
-
-    // Get the current date and time
-    const now = new Date();
-
-    // Calculate the time difference between now and the target date
-    const timeDifference = targetDate - now;
-
-    // Calculate the number of days, hours, minutes, and seconds
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    // Format the countdown string
-    const countdownStringDays = `${days.toString().padStart(2, "0")}`;
-    const countdownStringHours = `${hours.toString().padStart(2, "0")}`;
-    const countdownStringMinutes = `${minutes.toString().padStart(2, "0")}`;
-    const countdownStringSeconds = `${seconds.toString().padStart(2, "0")}`;
-
-    // Display the countdown on the HTML element
-    $("#days").text(countdownStringDays);
-    $("#hours").text(countdownStringHours);
-    $("#minutes").text(countdownStringMinutes);
-    $("#seconds").text(countdownStringSeconds);
-  }
-
-  function getParameterValue(parameterName) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(parameterName);
-  }
-
-  async function encrypt(text, key) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(text);
-    const keyData = encoder.encode(key);
-    const cryptoKey = await crypto.subtle.importKey("raw", keyData, "AES-CBC", false, ["encrypt"]);
-    const encryptedData = await crypto.subtle.encrypt({ name: "AES-CBC", iv: new Uint8Array(16) }, cryptoKey, data);
-    const encryptedArray = Array.from(new Uint8Array(encryptedData));
-    const encryptedHex = encryptedArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-    return encryptedHex;
-  }
-
-  async function decrypt(encryptedHex, key) {
-    const decoder = new TextDecoder();
-    const encryptedArray = new Uint8Array(encryptedHex.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
-    const keyData = new TextEncoder().encode(key);
-    const cryptoKey = await crypto.subtle.importKey("raw", keyData, "AES-CBC", false, ["decrypt"]);
-    const decryptedData = await crypto.subtle.decrypt({ name: "AES-CBC", iv: new Uint8Array(16) }, cryptoKey, encryptedArray);
-    return decoder.decode(decryptedData);
-  }
-
-
-  async function updateText(keyValue, key) {
-    try {
-      const decryptedValue = await decrypt(keyValue, key);
-      $(".highlightText").text("Hi " + decryptedValue + ",");
-    } catch (error) {
-      $(".highlightText").text("Hi,");
-      console.error("Error during decryption:", error);
-    }
-  }
-
-
-  function generateRandomHexBytes() {
-    const randomBytes = new Uint8Array(16);
-    window.crypto.getRandomValues(randomBytes);
-    const hexString = Array.from(randomBytes).map(byte => byte.toString(16).padStart(2, '0')).join('');
-    return hexString;
-  }
-
-
-
 
 
     // Update the countdown every second
@@ -191,3 +152,125 @@ $(document).ready(function() {
 
     
 });
+
+
+//// FUNCTIONS ////
+
+function updateCountdown() {
+  // Set the target date (October 3, 2023 1:00 PM GMT+8)
+  const targetDate = new Date("2023-10-03T13:00:00+08:00");
+
+  // Get the current date and time
+  const now = new Date();
+
+  // Calculate the time difference between now and the target date
+  const timeDifference = targetDate - now;
+
+  // Calculate the number of days, hours, minutes, and seconds
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  // Format the countdown string
+  const countdownStringDays = `${days.toString().padStart(2, "0")}`;
+  const countdownStringHours = `${hours.toString().padStart(2, "0")}`;
+  const countdownStringMinutes = `${minutes.toString().padStart(2, "0")}`;
+  const countdownStringSeconds = `${seconds.toString().padStart(2, "0")}`;
+
+  // Display the countdown on the HTML element
+  $("#days").text(countdownStringDays);
+  $("#hours").text(countdownStringHours);
+  $("#minutes").text(countdownStringMinutes);
+  $("#seconds").text(countdownStringSeconds);
+}
+
+function getParameterValue(parameterName) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(parameterName);
+}
+
+
+
+function vigenereEncrypt(plainText, key) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const plainTextLower = plainText.toLowerCase();
+  const keyRepeated = key.repeat(Math.ceil(plainText.length / key.length)).toLowerCase();
+  let cipherText = "";
+
+  for (let i = 0; i < plainText.length; i++) {
+    const plainChar = plainTextLower[i];
+    const keyChar = keyRepeated[i];
+    const isAlphabet = /[a-zA-Z]/.test(plainChar);
+
+    if (isAlphabet) {
+      const shift = alphabet.indexOf(keyChar);
+      const isUpperCase = /[A-Z]/.test(plainChar);
+      const offset = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+      const newIndex = (plainChar.charCodeAt(0) - offset + shift) % 26 + offset;
+      cipherText += String.fromCharCode(newIndex);
+    } else {
+      cipherText += plainChar;
+    }
+  }
+
+  return cipherText;
+}
+
+
+function vigenereDecrypt(cipherText, key) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const cipherTextLower = cipherText.toLowerCase();
+  const keyRepeated = key.repeat(Math.ceil(cipherText.length / key.length)).toLowerCase();
+  let plainText = "";
+
+  for (let i = 0; i < cipherText.length; i++) {
+    const cipherChar = cipherTextLower[i];
+    const keyChar = keyRepeated[i];
+    const isAlphabet = /[a-zA-Z]/.test(cipherChar);
+
+    if (isAlphabet) {
+      const shift = alphabet.indexOf(keyChar);
+      const isUpperCase = /[A-Z]/.test(cipherChar);
+      const offset = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+      const newIndex = (cipherChar.charCodeAt(0) - offset - shift + 26) % 26 + offset;
+      plainText += String.fromCharCode(newIndex);
+    } else {
+      plainText += cipherChar;
+    }
+  }
+
+  return plainText;
+}
+
+function addParametersToUrl(url, nmeValue, vkValue) {
+  const delimiter = url.includes('?') ? '&' : '?';
+  const updatedUrl = `${url}${delimiter}nme=${encodeURIComponent(nmeValue)}&vk=${encodeURIComponent(vkValue)}`;
+  return updatedUrl;
+}
+
+function capitalizeWords(str) {
+  return str.replace(/\b\w/g, l => l.toUpperCase());
+}
+
+// async function updateText(keyValue, key) {
+//   const decryptedValue = '';
+//   try {
+//     ecryptedValue = await decrypt(keyValue, key);
+//     $(".highlightText").text("Hi " + decryptedValue + ",");
+//   } catch (error) {
+//     $(".highlightText").text("Hi,");
+//     console.error("Error during decryption:", error);
+//   }
+
+//   if(decryptedValue) return decryptedValue;
+  
+// }
+
+
+// function generateRandomHexBytes() {
+//   const randomBytes = new Uint8Array(16);
+//   window.crypto.getRandomValues(randomBytes);
+//   const hexString = Array.from(randomBytes).map(byte => byte.toString(16).padStart(2, '0')).join('');
+//   return hexString;
+// }

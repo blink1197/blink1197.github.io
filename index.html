@@ -16,13 +16,19 @@
     <link rel="stylesheet" href="style.css" />
     <!-- jQuery from Google CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include Slick Carousel CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="main.js"></script>
     <title>Invitation</title>
   </head>
   <body>
     <main>
       <section class="topImage">
-        <div class="circleImage"></div>
+        <div class="circleImageContainer">
+          <img class="circleImage" src="./images/raw/IMG_6867-2.png">
+        </div>
       </section>
       <section class="tabsContainer">
         <nav class="navContainer">
@@ -101,6 +107,24 @@
             <h2 class="contentTitle">
               We are getting married!
             </h2>
+            <p class="weddingContentText">
+              <b>We decided on forever!</b>
+              <br><br>
+              In God's perfect time and with the blessing of our families.
+              <br><br>
+              We invite you to share our joy and to support our live as we unite in the Holy Sacrament of Matrimony
+              <br><br>
+              <i>October 03, 2023
+              <br><br>
+              at four o'clock in the afternoon</i>
+              <br><br>
+              We are honored to share this special day with you and look forward to celebrating our love surrounded by cherished friends and family.
+              <br><br>
+              <b><i>With heartfelt anticipation,</i><br>
+              Cris & Eirrell</b>
+            </p>
+
+
           </div>
 
           <div class="contentContainer" id="rsvpContent">
@@ -120,15 +144,29 @@
             <h2 class="contentTitle">
               Snapshots
             </h2>
+
+            <div class="wrapper">
+                  <div class="carousel">
+                    <div><img class="carouselImage" src="./images/picks/IMG_6843-min.JPG"></div>
+                    <div><img class="carouselImage" src="./images/picks/IMG_6885-min.JPG"></div>
+                    <div><img class="carouselImage" src="./images/picks/IMG_6931-min.JPG"></div>
+                    <div><img src="https://picsum.photos/300/200?random=4" style="display: none;"></div>
+
+                  </div>
+            </div>
           </div>
 
           <div class="contentContainer" id="locationContent">
             <h2 class="contentTitle">
               Venue
             </h2>
-            <img class="locationLogo" src="./images/terrasse_logo.jpg" alt="terrasse logo">
+            <div class="venueContainer">
+              <img class="locationLogo" src="./images/terrasse_logo.jpg" alt="terrasse logo">
+              <p>Terrasse MNL, Matiyaga st., Diliman, Quezon City, Metro Manila</p>
+            </div>
+            
             <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.267163925278!2d121.04870004031432!3d14.640770076149238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ffc121e049%3A0x58b7ed879aa7efc9!2sTerrasse%20MNL!5e0!3m2!1sen!2sph!4v1691746145064!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            Terrasse MNL, Matiyaga st., Diliman, Quezon City, Metro Manila
+            
           </div>
 
           <div class="contentContainer" id="faqContent">
@@ -147,7 +185,13 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 1
+                    We kindly request guests to arrive at the venue by <span class="blueText">15-20mins</span> before the ceremony.
+                    <br><br>
+                    This will provide ample time for everyone to find parking, get settled, and ensure a smooth start to the ceremony at <span class="blueText">4:00 PM</span>.
+                    <br><br> 
+                    Your punctuality is greatly appreciated as it will allow us to begin this momentous occasion on time.
+                    <br><br>
+                    Thank you for being a part of our celebration!
                   </p>
                 </div>
               </div>
@@ -161,7 +205,13 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 2
+                    We invite you to don your favorite casual outfit that resonates with the following color palettes:
+                    <br><br>
+                    Whether it's a flowing sundress or a comfortable shirt and slacks, the choice is yours – 
+                    we want you to feel at ease and enjoy the day in attire that reflects your personal style.
+
+                    <br><br>
+                    <span class="blueText"><i>As a friendly note, we're reserving white and gray hues for the bride and groom :)</i></span>
                   </p>
                 </div>
               </div>
@@ -175,7 +225,10 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 3
+                    Parking spots will be allocated on a <span class="blueText">first-come, first-served basis</span>. 
+                    <br><br>
+                    Please note that the venue doesn't reserve parking specifically for events, 
+                    so we recommend arriving a bit early to secure a convenient spot. :)
                   </p>
                 </div>
               </div>
@@ -189,7 +242,15 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 4
+                    We kindly request an <span class="blueText">unplugged ceremony</span>. 
+                    <br><br>
+                    We would love for our cherished guests to fully immerse themselves in the moment and enjoy the ceremony. 
+                    Your presence and heartfelt participation mean the world to us.
+                    <br><br>
+                    However, after we're announced husband and wife, you're more than welcome to capture and share memories.
+                    <br><br>
+                    Additionally, we would appreciate it if any photos or videos taken by our guests are not shared on social media platforms.
+                    We want to keep this intimate experience within our circle of loved ones. :))
                   </p>
                 </div>
               </div>
@@ -203,21 +264,14 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 4
-                  </p>
-                </div>
-              </div>
-
-              <div class="faqCards">
-                <div class="faqTitleContainer">
-                  <h3 class="faqCardTitle">
-                    What kind of food will be served?
-                  </h3>
-                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
-                </div>
-                <div class="faqTextContainer">
-                  <p class="faqHeading">
-                    Sample Answer to Question 4
+                    Your presence on our special day means the world to us, and the love and joy you share are the most precious gifts we could ask for. 
+                    We genuinely appreciate your thoughtfulness.
+                    <br><br>
+                    If you're considering a gift, we would like to suggest a <span class="blueText">monetary contribution</span> as we embark on our journey together as a newly married couple. 
+                    <br><br>
+                    However, please know that your presence is truly the ultimate gift, and any present you choose to give, whether it's a heartfelt card, a cherished memory, or something else entirely, is deeply valued.
+                    <br><br>
+                    Ultimately, your well wishes and being part of this celebration are what matter most to us. :)
                   </p>
                 </div>
               </div>
@@ -231,24 +285,18 @@
                 </div>
                 <div class="faqTextContainer">
                   <p class="faqHeading">
-                    Sample Answer to Question 4
+                    <span class="blueText">Yes</span>, Here's for your reference :)
+                    ---- to add a link that will show them the sitting arrangement ----
                   </p>
                 </div>
               </div>
 
-              <div class="faqCards">
-                <div class="faqTitleContainer">
-                  <h3 class="faqCardTitle">
-                    I still have questions. What is the best way to contact you?
-                  </h3>
-                  <button class="faqCollapseButton"><img class="collapseIcon" src="./images/plus.png"/></button>
-                </div>
-                <div class="faqTextContainer">
-                  <p class="faqHeading">
-                    Sample Answer to Question 4
-                  </p>
-                </div>
-              </div>
+              <p class="faqText">
+                If you have any questions or would like further guidance, please don't hesitate to contact us via Messenger. :)
+                <br><br>
+                We're eagerly looking forward to sharing this memorable occasion with you!
+              </p>
+              
             </div>
           </div>
 
@@ -294,6 +342,12 @@
             <h2 class="contentTitle">
               Message
             </h2>
+            <p class="messageContentText">
+              <b>If you have any message for us, you can type and send it to us using the form below.</b>
+            </p>
+            
+            <iframe class="messageForm" src="https://docs.google.com/forms/d/e/1FAIpQLSfBgONDK9OCGRgMIXV3nGcc2C5gqA0uUgF7OjMplATzCspEAw/viewform?embedded=true" width="640" height="537" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
           </div>
         </div>
       </section>
