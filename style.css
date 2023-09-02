@@ -182,7 +182,7 @@ main {
   font-size: 2em;
   color: #27445C;
   margin-bottom: 20px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .behindContentContainer {
@@ -232,6 +232,7 @@ main {
   color: #27445C;
   margin:0px;
   font-size: 2.73em;
+  margin-top: 20px;
 }
 
 
