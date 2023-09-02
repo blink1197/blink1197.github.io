@@ -9,8 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      node-version: [16.x] # Specify Node.js 16
+      matrix:
+        node-version: [16.x] # Specify Node.js 16
 
     steps:
       - name: Checkout code
