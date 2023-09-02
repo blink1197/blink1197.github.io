@@ -42,17 +42,17 @@ main {
 }
 
 .topImage {
-  background-image: url(./images/raw/IMG_6894-1.png);
+  background-image: url(./images/raw/cover.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 206px;
+  max-height: 220px;
   height: 23%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 5px auto 70px auto;
+  margin: 7px auto 70px auto;
   border-radius: 10px;
   width: 95%;
   flex-grow: 0;
@@ -171,7 +171,7 @@ main {
 
 .weddingContentText, .messageContentText {
   font-family: 'Montserrat', sans-serif;
-  margin: 10px auto;
+  margin: 5px auto;
   text-align: center;
   width: 90%;
 
@@ -181,7 +181,7 @@ main {
   font-family: 'Britanny', sans-serif;
   font-size: 2em;
   color: #27445C;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: 20px;
 }
 
@@ -215,7 +215,7 @@ main {
 }
 
 .rsvpForm, .messageForm{
-  width: 100%;
+  width: 95%;
   height: 70%;
   overflow-x: hidden;
 }
@@ -311,6 +311,32 @@ main {
 }
 
 
+.addressContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.addressContainer p {
+  margin: 0;
+}
+
+.addressButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addressText {
+  padding: 7px;
+  background-color: #26435b;
+  border-radius: 5px;
+  color: white;
+  margin: 0 5px 0 5px;
+  text-decoration: none;
+}
+
+
 .faqContent, .locationContent {
   display: flex;
   flex-direction: column;
@@ -333,12 +359,13 @@ main {
 
 .faqCards {
   margin-bottom: 30px;
+  width: 85%;
 }
 
 .faqTitleContainer {
   display: flex;
   justify-content: space-between;
-  width: 85vw;
+  width: 100%;
   background-color: #27445C;
   color: white;
   border-radius: 10px;
@@ -356,7 +383,7 @@ main {
   border-radius: 0 0 10px 10px;
   background-color: #ccdce7;
   display: none;
-  width: 85vw;
+  width: 100%;
 }
 
 .faqHeading {

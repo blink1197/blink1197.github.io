@@ -21,6 +21,8 @@ $(document).ready(function() {
   $('.carousel').slick({
     slidesToShow: 1,
     centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
   });
 
   
