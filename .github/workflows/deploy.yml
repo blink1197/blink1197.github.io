@@ -9,24 +9,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js
-              uses: actions/setup-node@v1
-              with:
-                node-version: 12
-              run: yarn install
-              run: yarn build
-              run: yarn test
-            - name: Push build to S3
-              uses: sai-sharan/aws-s3-sync-action@master
-              with:
-                access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                region: 'ap-southeast-2'
-                source: 'build'
-                destination_bucket: ${{ secrets.DESTINATION_BUCKET }}
-                exclude: '.git/*'
-                delete: true
-                quiet: false
-
-
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Push build to S3
+        uses: sai-sharan/aws-s3-sync-action@master
+        with:
+          access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: "ap-southeast-2"
+          source: "build"
+          destination_bucket: ${{ secrets.DESTINATION_BUCKET }}
+          exclude: ".git/*"
+          delete: true
+          quiet: false
