@@ -19,9 +19,7 @@ $(document).ready(function() {
 
 
   $('.carousel').slick({
-    lazyLoad: 'ondemand',
     slidesToShow: 1,
-    dots:true,
     centerMode: true,
   });
 
@@ -94,7 +92,7 @@ $(document).ready(function() {
 
   $(".messageButton").click(function() {
     $(".contentContainer").hide();
-    $(".mainContentContainer").css('border-radius', '0 0 10px 10px');
+    $(".mainContentContainer").css('border-radius', '10px 0 10px 10px');
     $("#messageContent").show();
   });
 
@@ -105,6 +103,7 @@ $(document).ready(function() {
     $(".faqNav, .backNav, .programNav, .countdownNav, .messageNav").show();
     $(".navItem.faqNav .overlay").addClass("selected");
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#faqContent").show();
   });
 
@@ -114,6 +113,7 @@ $(document).ready(function() {
     $(".faqNav, .backNav, .programNav, .countdownNav, .messageNav").hide();
     $(".navItem.locationNav .overlay").addClass("selected");
     $(".contentContainer").hide();
+    $(".mainContentContainer").css('border-radius', '10px');
     $("#locationContent").show();
   });
 

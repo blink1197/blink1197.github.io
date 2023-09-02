@@ -172,7 +172,7 @@ main {
 .weddingContentText, .messageContentText {
   font-family: 'Montserrat', sans-serif;
   margin: 10px auto;
-  text-align: left;
+  text-align: center;
   width: 90%;
 
 }
@@ -376,6 +376,12 @@ main {
   margin-right: 10px;
 }
 
+.colorpalette {
+  width: 80%;
+  border: 2px solid white;
+  margin: 5px 0 5px 0;
+}
+
 .collapseIcon {
   flex-grow: 0;
   flex-shrink: 0;
@@ -470,6 +476,7 @@ main {
 .carouselImage {
   width: 100px;
   height: auto;
+  margin: 0;
 }
 
 .carousel{
@@ -485,5 +492,5 @@ main {
 }
 .wrapper .slick-dots li button:before {
   font-size:20px;
-  color:white;
+  color:black;
 }
