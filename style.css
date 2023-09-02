@@ -62,8 +62,8 @@ main {
 
 .circleImageContainer {
   border-radius: 75px;
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   background-color: #c2e0f4;
   position: relative;
   top: 90px;
@@ -83,7 +83,7 @@ main {
   height: auto;
   width: 95%;
   flex-grow: 1;
-  margin: 0 auto 10px auto;
+  margin: 10px auto 10px auto;
   display: flex;
   flex-direction: column;
   position: relative;
