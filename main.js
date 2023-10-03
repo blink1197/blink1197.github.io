@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 function updateCountdown() {
   // Set the target date (October 3, 2023 1:00 PM GMT+8)
-  const targetDate = new Date("2023-10-03T13:00:00+08:00");
+  const targetDate = new Date("2023-10-03T16:00:00+08:00");
 
   // Get the current date and time
   const now = new Date();
