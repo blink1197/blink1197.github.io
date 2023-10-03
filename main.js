@@ -181,10 +181,10 @@ function updateCountdown() {
   const countdownStringSeconds = `${seconds.toString().padStart(2, "0")}`;
 
   // Display the countdown on the HTML element
-  $("#days").text(countdownStringDays);
-  $("#hours").text(countdownStringHours);
-  $("#minutes").text(countdownStringMinutes);
-  $("#seconds").text(countdownStringSeconds);
+  $("#days").text("00");
+  $("#hours").text("00");
+  $("#minutes").text("00");
+  $("#seconds").text("00");
 }
 
 function getParameterValue(parameterName) {
